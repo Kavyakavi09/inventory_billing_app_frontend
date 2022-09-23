@@ -59,6 +59,6 @@ export const reset = (formData, navigate) => async (dispatch) => {
     await api.reset(formData);
     navigate('/dashboard');
   } catch (error) {
-    alert(error);
+    console.log(error);
   }
 };

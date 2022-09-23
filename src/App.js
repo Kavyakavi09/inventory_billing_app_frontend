@@ -12,6 +12,8 @@ import InvoiceDetails from './pages/InvoiceDetails/InvoiceDetails';
 import Invoices from './pages/Invoices/Invoices';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Settings from './pages/Settings/Settings';
+import Forgot from './pages/Password/Forgot';
+import Reset from './pages/Password/Reset';
 
 function App() {
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -33,6 +35,8 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/customers' element={<ClientList />} />
             <Route path='/settings' element={<Settings />} />
+            <Route path='/forgot' element={<Forgot />} />
+            <Route path='/reset/:token' element={<Reset />} />
           </Routes>
           <Footer />
         </SnackbarProvider>

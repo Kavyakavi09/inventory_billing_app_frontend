@@ -174,7 +174,7 @@ const Login = () => {
               </Button>
             </Grid>
           </Grid>
-          <Link to='forgot' style={{ textDecoration: 'none' }}>
+          <Link to='/forgot' style={{ textDecoration: 'none' }}>
             <p
               style={{
                 textAlign: 'center',
