@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import NavBar from './components/NavBar/NavBar';
+import Header from './components/Header/Header';
+import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
+import SnackbarProvider from 'react-simple-snackbar';
+import ClientList from './pages/clients/ClientList';
+import Footer from './components/Footer/Footer';
+import Invoice from './pages/Invoice/Invoice';
+import InvoiceDetails from './pages/InvoiceDetails/InvoiceDetails';
+import Invoices from './pages/Invoices/Invoices';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Settings from './pages/Settings/Settings';
 
 function App() {
+  const user = JSON.parse(localStorage.getItem('profile'));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <GoogleOAuthProvider
+        clientId={`${process.env.REACT_APP_GOOGLE_CLIENT_ID}`}>
+        <SnackbarProvider>
+          {user && <NavBar />}
+          <Header />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/invoice' element={<Invoice />} />
+            <Route path='/edit/invoice/:id' element={<Invoice />} />
+            <Route path='/invoice/:id' element={<InvoiceDetails />} />
+            <Route path='/invoices' element={<Invoices />} />
+            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/customers' element={<ClientList />} />
+            <Route path='/settings' element={<Settings />} />
+          </Routes>
+          <Footer />
+        </SnackbarProvider>
+      </GoogleOAuthProvider>
+    </BrowserRouter>
   );
 }
 
