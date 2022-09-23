@@ -19,7 +19,7 @@ export const getInvoice = (id) => async (dispatch) => {
       search: user?.result?._id || user?.result?.sub,
     });
     const invoiceData = { ...data, businessDetails };
-    console.log(invoiceData);
+
     dispatch({ type: GET_INVOICE, payload: invoiceData });
   } catch (error) {
     console.log(error.response);

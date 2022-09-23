@@ -93,10 +93,9 @@ const InvoiceDetails = () => {
     history(`/edit/invoice/${id}`);
   };
 
-  const createAndDownloadPdf = () => {
-    setDownloadStatus('loading');
-    axios
-      .post(`${process.env.REACT_APP_API}/create-pdf`, {
+  const createPdf = async () => {
+    try {
+      await axios.post(`${process.env.REACT_APP_API}/create-pdf`, {
         name: invoice.client.name,
         address: invoice.client.address,
         phone: invoice.client.phone,
@@ -114,26 +113,39 @@ const InvoiceDetails = () => {
         totalAmountReceived: toCommas(totalAmountReceived),
         balanceDue: toCommas(total - totalAmountReceived),
         company: company,
-      })
-      .then(() =>
-        axios.get(`${process.env.REACT_APP_API}/fetch-pdf`, {
-          responseType: 'blob',
-        })
-      )
-      .then((res) => {
-        const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-        saveAs(pdfBlob, 'invoice.pdf');
-      })
-      .then(() => setDownloadStatus('success'));
+  const downloadPdf = async () => {
+    setDownloadStatus('loading');
+    try {
+      const res = await axios.get(`${process.env.REACT_APP_API}/fetch-pdf`, {
+        responseType: 'blob',
+      });
+      const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
+
+      saveAs(pdfBlob, 'invoice.pdf');
+      setDownloadStatus('success');
+    } catch (error) {
+      console.log(error);
+      setDownloadStatus('error');
+    }
+  };
+
+  const createDownload = () => {
+    createPdf();
+    downloadPdf();
   };
 
   //SEND PDF INVOICE VIA EMAIL
-  const sendPdf = (e) => {
+  const sendPdf = async (e) => {
     e.preventDefault();
     setSendStatus('loading');
-    axios
-      .post(`${process.env.REACT_APP_API}/send-pdf`, {
+    try {
+      await axios.post(`${process.env.REACT_APP_API}/send-pdf`, {
         name: invoice.client.name,
         address: invoice.client.address,
         phone: invoice.client.phone,
@@ -152,13 +164,12 @@ const InvoiceDetails = () => {
         balanceDue: toCommas(total - totalAmountReceived),
         link: `${process.env.REACT_APP_URL}/invoice/${invoice._id}`,
         company: company,
-      })
-      // .then(() => console.log("invoice sent successfully"))
-      .then(() => setSendStatus('success'))
-      .catch((error) => {
-        console.log(error);
-        setSendStatus('error');
       });
+      setSendStatus('success');
+    } catch (error) {
+      console.log(error);
+      setSendStatus('error');
+    }
   };
 
   const iconSize = {
@@ -196,7 +207,7 @@ const InvoiceDetails = () => {
             Send to Customer
           </ProgressButton>
 
-          <ProgressButton onClick={createAndDownloadPdf} state={downloadStatus}>
+          <ProgressButton onClick={createDownload} state={downloadStatus}>
             Download PDF
           </ProgressButton>
 
