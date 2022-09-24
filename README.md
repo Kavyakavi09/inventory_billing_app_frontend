@@ -5,7 +5,10 @@ In this project i have build inventory management with billing application. can 
 [https://invoicybilly.netlify.app/] (<img src="https://ibb.co/Mk9xx47" alt="invoicy-home" border="0" >)
 
 
-
+<p align="center">
+  <img src="your_relative_path_here" width="350" alt="invoicy-home" >
+ 
+</p>
 
 
 ## Available Scripts
