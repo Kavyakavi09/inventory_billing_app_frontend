@@ -3,7 +3,7 @@
 In this project i have build inventory management with billing application. can anyone use to create invoices and download and send invoices to mail to their customers.
 
 <p align="center">
-  <img src="https://github.com/Kavyakavi09/inventory_billing_app_frontend/blob/master/public/images/invoicy%20home.png" width="550" alt="invoicy-home" >
+  <img src="https://github.com/Kavyakavi09/inventory_billing_app_frontend/blob/master/public/images/invoicy%20home.png" width="1200" alt="invoicy-home" >
 </p>
 
 ## Available Scripts
