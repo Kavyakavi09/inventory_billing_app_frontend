@@ -172,11 +172,6 @@ const InvoiceDetails = () => {
     }
   };
 
-  const CreateAndSend = () => {
-    createPdf();
-    sendPdf();
-  };
-
   const iconSize = {
     height: '18px',
     width: '18px',
@@ -206,7 +201,7 @@ const InvoiceDetails = () => {
       {invoice?.creator?.includes(user?.result?._id || user?.result?.sub) && (
         <div className={styles.buttons}>
           <ProgressButton
-            onClick={CreateAndSend}
+            onClick={sendPdf}
             state={sendStatus}
             onSuccess={() => openSnackbar('Invoice sent successfully')}>
             Send to Customer

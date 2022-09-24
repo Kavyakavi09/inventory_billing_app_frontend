@@ -575,7 +575,7 @@ const Invoice = () => {
         <Grid container justifyContent='center'>
           <Button
             variant='contained'
-            style={{ justifyContentContent: 'center' }}
+            style={{ justifyContentContent: 'center', marginTop: '10px' }}
             type='submit'
             color='primary'
             size='large'

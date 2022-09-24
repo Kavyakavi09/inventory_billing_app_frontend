@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Fab, Action } from 'react-tiny-fab';
 import 'react-tiny-fab/dist/styles.css';
 import AddIcon from '@mui/icons-material/Add';
@@ -9,10 +9,9 @@ import AddClient from '../../pages/clients/AddClient';
 
 const FabButton = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const mainButtonStyles = { backgroundColor: '#1976D2' };
   const [open, setOpen] = useState(false);
-
-  // if(location.pathname === '/invoice') return null
 
   return (
     <div>
@@ -24,8 +23,9 @@ const FabButton = () => {
         {location.pathname !== '/invoice' && (
           <Action
             text='New Invoice'
-            // onClick={() =>  history.push(`/invoice`)}
-            onClick={() => (window.location.href = '/invoice')}>
+            onClick={() => navigate(`/invoice`)}
+            // onClick={() => (window.location.href = '/invoice')}
+          >
             <CreateIcon />
           </Action>
         )}
