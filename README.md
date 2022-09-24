@@ -2,7 +2,7 @@
 
 In this project i have build inventory management with billing application. can anyone use to create invoices and download and send invoices to mail to their customers.
 
-[https://invoicybilly.netlify.app/] (<img src="https://i.ibb.co/pjnBB8d/invoicy-home.png" alt="invoicy-home" border="0" width:"500px">)
+[https://invoicybilly.netlify.app/] (<img src="https://ibb.co/Mk9xx47" alt="invoicy-home" border="0" >)
 
 
 
