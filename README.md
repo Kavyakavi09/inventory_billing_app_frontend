@@ -6,7 +6,7 @@ In this project i have build inventory management with billing application. can 
 
 
 <p align="center">
-  <img src="your_relative_path_here" width="350" alt="invoicy-home" >
+  <img src="https://github.com/Kavyakavi09/inventory_billing_app_frontend/blob/master/public/images/invoicy%20home.png" width="350" alt="invoicy-home" >
  
 </p>
 
