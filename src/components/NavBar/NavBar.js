@@ -61,7 +61,7 @@ const NavBar = () => {
           </li>
 
           <li className='nav-item'>
-            <Link to='/invoice' className='nav-link'>
+            <a href='/invoice' className='nav-link'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='24'
@@ -77,10 +77,10 @@ const NavBar = () => {
                 <line x1='5' y1='12' x2='19' y2='12'></line>
               </svg>
               <span className='link-text'>Create</span>
-            </Link>
+            </a>
           </li>
           <li className='nav-item'>
-            <Link to='/invoices' className='nav-link'>
+            <a href='/invoices' className='nav-link'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='24'
@@ -97,7 +97,7 @@ const NavBar = () => {
                 <polyline points='2 12 12 17 22 12'></polyline>
               </svg>
               <span className='link-text'>Invoices</span>
-            </Link>
+            </a>
           </li>
           <li className='nav-item'>
             <a href='/customers' className='nav-link'>
