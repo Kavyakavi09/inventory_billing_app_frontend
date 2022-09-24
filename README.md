@@ -10,6 +10,7 @@ In this project i have build inventory management with billing application. can 
  
 </p>
 
+![alt text](https://github.com/[Kavyakavi09]/[inventory_billing_ap]/blob/[master]/https://github.com/Kavyakavi09/inventory_billing_app_frontend/blob/master/public/images/invoicy%20home.png?raw=true)
 
 ## Available Scripts
 
