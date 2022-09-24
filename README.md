@@ -2,14 +2,6 @@
 
 In this project i have build inventory management with billing application. can anyone use to create invoices and download and send invoices to mail to their customers.
 
-[https://invoicybilly.netlify.app/] (<img src="https://ibb.co/Mk9xx47" alt="invoicy-home" border="0" >)
-
-
-<p align="center">
-  <img src="https://github.com/Kavyakavi09/inventory_billing_app_frontend/blob/master/public/images/invoicy%20home.png" width="350" alt="invoicy-home" >
- 
-</p>
-
 ![alt text](https://github.com/[Kavyakavi09]/[inventory_billing_ap]/blob/[master]/https://github.com/Kavyakavi09/inventory_billing_app_frontend/blob/master/public/images/invoicy%20home.png?raw=true)
 
 ## Available Scripts
