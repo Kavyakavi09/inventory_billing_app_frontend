@@ -1,6 +1,25 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project i have build inventory management with billing application. can anyone use to create invoices and download and send invoices to mail to their customers.
+
+[###live link](https://invoicybilly.netlify.app/)
+
+[###homepage]
+<p align="center">
+  <img src="https://github.com/Kavyakavi09/inventory_billing_app_frontend/blob/master/public/images/invoicy%20home.png" width="1200" alt="invoicy-home" >
+</p>
+
+[###dashboard]
+<p align="center">
+  <img src="https://github.com/Kavyakavi09/inventory_billing_app_frontend/blob/master/public/images/dashboard.png" width="1200" alt="invoicy-home" >
+</p>
+
+[###receipt]
+
+<p align="center">
+  <img src="https://github.com/Kavyakavi09/inventory_billing_app_frontend/blob/master/public/images/receipt.png" width="1200" alt="invoicy-home" >
+</p>
+
 
 ## Available Scripts
 
