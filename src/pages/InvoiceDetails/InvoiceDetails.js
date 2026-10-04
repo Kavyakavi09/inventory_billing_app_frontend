@@ -167,6 +167,10 @@ const InvoiceDetails = () => {
     } catch (error) {
       console.log(error);
       setSendStatus('error');
+      openSnackbar(
+        error?.response?.data?.message ||
+          'Could not send the invoice. Please try again.'
+      );
     }
   };
 
