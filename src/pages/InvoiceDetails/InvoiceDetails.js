@@ -95,7 +95,7 @@ const InvoiceDetails = () => {
 
   const createPdf = async () => {
     try {
-      await axios.post(`${process.env.REACT_APP_API}/create-pdf`, {
+      return await axios.post(`${process.env.REACT_APP_API}/create-pdf`, {
         name: invoice.client.name,
         address: invoice.client.address,
         phone: invoice.client.phone,
@@ -113,18 +113,17 @@ const InvoiceDetails = () => {
         totalAmountReceived: toCommas(totalAmountReceived),
         balanceDue: toCommas(total - totalAmountReceived),
         company: company,
-      });
+      }, { responseType: 'blob' });
     } catch (error) {
       console.log(error);
+      throw error;
     }
   };
 
   const downloadPdf = async () => {
     setDownloadStatus('loading');
     try {
-      const res = await axios.get(`${process.env.REACT_APP_API}/fetch-pdf`, {
-        responseType: 'blob',
-      });
+      const res = await createPdf();
       const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
 
       saveAs(pdfBlob, 'invoice.pdf');
@@ -136,7 +135,6 @@ const InvoiceDetails = () => {
   };
 
   const createDownload = () => {
-    createPdf();
     downloadPdf();
   };
 
