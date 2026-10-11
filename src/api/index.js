@@ -53,3 +53,5 @@ export const updateProfile = (id, updatedProfile) =>
 export const deleteProfile = (id) => API.delete(`/profiles/${id}`);
 
 export const askAssistant = (message) => API.post('/assistant/chat', { message });
+export const fetchAssistantHistory = (before) =>
+  API.get('/assistant/history', { params: before ? { before } : {} });
