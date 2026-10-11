@@ -51,3 +51,5 @@ export const createProfile = (newProfile) => API.post('/profiles', newProfile);
 export const updateProfile = (id, updatedProfile) =>
   API.put(`/profiles/${id}`, updatedProfile);
 export const deleteProfile = (id) => API.delete(`/profiles/${id}`);
+
+export const askAssistant = (message) => API.post('/assistant/chat', { message });
